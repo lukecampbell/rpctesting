@@ -11,7 +11,7 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.QueueingConsumer;
 
-public class RPCService {
+public class RPCService implements Runnable{
     private Connection connection;
     private Channel channel;
     private ConnectionFactory factory;
@@ -130,5 +130,14 @@ public class RPCService {
     public void close() throws IOException {
         connection.close();
     }
+
+	@Override
+	public void run() {
+		try {
+			start();
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 }
