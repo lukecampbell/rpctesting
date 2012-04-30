@@ -1,4 +1,4 @@
-package net.ithosting.testing.model;
+package net.ithosting.testing;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
